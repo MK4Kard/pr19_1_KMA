@@ -41,6 +41,17 @@ class CrimeFragment : Fragment() {
             isEnabled = false
         }
 
+        dateButton.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, NullFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        solvedCheckBox.apply {
+            isEnabled = false
+        }
+
         return view
     }
 
@@ -53,6 +64,7 @@ class CrimeFragment : Fragment() {
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                 crime.title = s.toString()
+                title_solved()
             }
 
             override fun afterTextChanged(s: Editable?) {
@@ -63,7 +75,20 @@ class CrimeFragment : Fragment() {
         titleField.addTextChangedListener(titleWatcher)
 
         solvedCheckBox.apply {
-            setOnCheckedChangeListener { _, isChecked -> crime.isSolved = isChecked}
+            setOnCheckedChangeListener { _, isChecked -> crime.isSolved = isChecked
+                solved_btn()}
         }
+    }
+
+    fun title_solved() {
+        solvedCheckBox.isEnabled = crime.title.isNotEmpty()
+    }
+
+    fun solved_btn() {
+        dateButton.isEnabled = crime.isSolved
+    }
+
+    fun click() {
+
     }
 }
