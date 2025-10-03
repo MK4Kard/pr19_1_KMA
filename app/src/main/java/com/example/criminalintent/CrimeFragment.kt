@@ -10,13 +10,17 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
 import androidx.fragment.app.Fragment
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import java.util.Date
 
 class CrimeFragment : Fragment() {
 
     private lateinit var crime: Crime
     private lateinit var titleField: EditText
-    private lateinit var dateButton: Button
+    private lateinit var dateButton: ExtendedFloatingActionButton
     private lateinit var solvedCheckBox: CheckBox
+    val now = Date()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,18 +36,18 @@ class CrimeFragment : Fragment() {
 
         titleField = view.findViewById(R.id.crime_title) as EditText
 
-        dateButton = view.findViewById(R.id.crime_date) as Button
+        dateButton = view.findViewById(R.id.crime_date) as ExtendedFloatingActionButton
 
         solvedCheckBox = view.findViewById(R.id.crime_solved) as CheckBox
 
         dateButton.apply {
-            text = crime.date.toString()
+            text = crime.date.format(now)
             isEnabled = false
         }
 
         dateButton.setOnClickListener {
             parentFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, NullFragment())
+                .replace(R.id.fragment_container, NullFragment(crime))
                 .addToBackStack(null)
                 .commit()
         }
@@ -86,9 +90,5 @@ class CrimeFragment : Fragment() {
 
     fun solved_btn() {
         dateButton.isEnabled = crime.isSolved
-    }
-
-    fun click() {
-
     }
 }

@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="@string/crime_details_label"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/crime_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
