@@ -8,11 +8,14 @@
     <string name="new_crime">Новое преступление</string>
     <string name="crime_suspect_text">Выбрать подозреваемого</string>
     <string name="crime_report_text">Отправьте сообщение о преступлении</string>
-    <string name="crime_report">%1$s! Преступление было обнаружено на % 2$s.%3$s и%4$s</string>
+    <string name="crime_report">{0}! Преступление было обнаружено на {1}. {2} и {3}</string>
     <string name="crime_report_solved">Дело раскрыто</string>
     <string name="crime_report_unsolved">Дело не раскрыто</string>
     <string name="crime_report_no_suspect">подозреваемого нет.</string>
     <string name="crime_report_suspect">подозреваемый - %s.</string>
     <string name="crime_report_subject">Сообщение о преступлении с преступными намерениями</string>
     <string name="send_report">Отправьте сообщение о преступлении с помощью</string>
+    <string name="hello">Приветствую на фрагменте</string>
+    <string name="choose_suspect">Выберите номер</string>
+    <string name="send_crime_report">Куда отправить преступление</string>
 </resources>

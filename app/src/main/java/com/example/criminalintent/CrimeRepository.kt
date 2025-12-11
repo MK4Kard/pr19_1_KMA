@@ -2,7 +2,9 @@ package com.example.criminalintent
 
 import androidx.lifecycle.LiveData
 import androidx.room.Room
-import androidx.room.processor.Context
+import android.content.Context
+import com.example.criminalintent.database.CrimeDatabase
+import com.example.criminalintent.database.migration_1_2
 import java.util.UUID
 
 private const val DATABASE_NAME = "crimedatabase"

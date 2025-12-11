@@ -1,8 +1,9 @@
-package com.example.criminalintent
+package com.example.criminalintent.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Query
+import com.example.criminalintent.Crime
 import java.util.UUID
 
 @Dao
